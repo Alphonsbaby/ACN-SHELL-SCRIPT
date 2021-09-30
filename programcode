@@ -1,0 +1,600 @@
+1. write a shell script program to display name, age, and family name.
+
+echo"enter the name"
+read a
+echo "enter the age"
+read b
+echo "enter the family name"
+read c
+echo "name is "$a "age is "$b"family name is"$c
+
+
+
+2. write a shell script program to add two numbers.
+
+echo "enter the 1 st number"
+read a
+echo "enter the 2 nd number"
+read b
+s=`expr $a + $b `
+echo "sum is" $s
+
+
+
+3. Write a shell script to use the 8 special variables.
+
+echo "filename::"$0
+echo"varible ::"$n
+echo "argument::"$#
+echo "double quoted argument::"$*
+echo "process id::"$s
+echo "process number::"$!
+echo "all argu ments::"$@
+
+
+
+4. Write a shell script to Display the process id of your current shell.
+
+#!/bin/bash
+echo "demo progrsam"
+echo "PID is"$$
+~                 
+
+5. Write a shell script to display your name, current date, time, username and current directory.
+
+#!/bin/bash
+echo "hellow,$LOGNAME"
+echo "current date `date`"
+echo "user `who i am`"
+echo "current directory `pwd`"
+
+
+6. Write a shell script to store and display the names of your family members using array.
+
+name[0]="anu"
+name[1]="alphons"
+name[2]="aneesha"
+name[3]="albins"
+echo "family members name ${name[0]}"
+echo "family members name ${name[1]}"
+echo "family members name ${name[2]}"
+echo "family members name ${name[3]}"
+
+
+
+7. Write a shell script program to store 10 and 20 in variables a and b. Then apply 8 arithmetic
+operations and display the output.
+
+a=10
+b=20
+s=`expr $a + $b`
+echo "add 2 number "$s
+d=`expr $a \* $b`
+echo "multiply 2 number"$d
+f=`expr $a / $b`
+echo "divide 2 number"$f
+g=`expr $a - $b`
+echo "substract 2 numbers"$g
+
+
+8. Write a shell script program to store 10 and 20 in variables a and b. Then apply 6 relational
+operations and display the output.
+
+a=10
+b=20
+if [ $a -eq $b ]
+then
+        echo "a is equal to b"
+else
+        echo"not equal"
+fi
+if [ $a -ne $b ]
+then
+        echo "a is not equal to b"
+else
+        echo "equal"
+
+fi
+if [ $a -gt $b ]
+then
+        echo "a is greater than b"
+else
+        echo "a is not gt b"
+
+fi
+if [ $a -ge $b ]
+then
+        echo "a is ge to b"
+else
+        echo "a is not ge to b"
+
+
+fi
+if [ $a -lt $b ]
+then
+        echo "a is less than b"
+else
+        echo" a is not less than b"
+fi
+if [ $a -le $b ]
+then
+        echo "a is le to b"
+else
+        echo "a is not le to b"
+fi
+
+
+9. Write a shell script program to store abc and efg in variables a and b. Then apply string
+operations and display the output.
+
+#!/bin/bash
+a="abc"
+b="efg"
+if [ $a = $b ]
+then
+        echo "both string is same"
+else
+        echo "not same"
+
+fi
+if [ $a != $b ]
+then
+        echo "not same"
+else
+        echo " same"
+
+fi
+if [ $a \> $b ]
+then
+        echo "a greater than b"
+else
+        echo "b not greater  than a"
+fi
+if [ $a \< $b ]
+then
+        echo "a is less than b"
+else
+        echo "a is notless than b"
+fi
+if [ -n $b ]
+then
+        echo "not empty "
+else
+        echo "empty"
+fi
+if [ -z $b ]
+then
+        echo "empty "
+else
+        echo "not empty"
+fi
+
+
+10. Write a shell script to use File Test operators and show the output.
+
+!/bin/sh
+
+file="/home/sjcet/lab/program1.sh"
+
+if [ -r $file ]
+then
+   echo "File has read access"
+else
+   echo "File does not have read access"
+fi
+
+if [ -w $file ]
+then
+   echo "File has write permission"
+else
+   echo "File does not have write permission"
+fi
+
+if [ -x $file ]
+then
+   echo "File has execute permission"
+else
+   echo "File does not have execute permission"
+fi
+
+if [ -f $file ]
+then
+   echo "File is an ordinary file"
+else
+   echo "This is sepcial file"
+fi
+
+if [ -d $file ]
+then
+   echo "File is a directory"
+else
+   echo "This is not a directory"
+fi
+
+if [ -s $file ]
+then
+   echo "File size is not zero"
+else
+   echo "File size is zero"
+fi
+
+if [ -e $file ]
+then
+   echo "File exists"
+else
+   echo "File does not exist"
+fi
+      
+
+11. Write a shell script to accept a password and check whether it is matching with the existing
+password. Display appropriate messages.
+
+pass="password"
+echo "enter the password"
+read p
+if [ $p = $pass ]
+then
+        echo" NOW LOGGED"
+else
+        echo "password is not correct plz enter the valid password "
+fi
+
+
+12. Write a shell script to accept two numbers a and b. Compare these numbers and Display
+appropriate messages. ( Equal, greater than, less than) using if..elif
+
+#!/bin/bash
+a=10
+b=20
+if [ $a -eq $b ]
+then
+        echo "a is equal to b"
+elif [ $a -gt $b ]
+then
+
+        echo "a is greater than b"
+elif [ $a -lt $b ]
+then
+        echo "a is less than b"
+else
+        echo" a is not less than b"
+fi
+
+
+
+13. Write a shell script to accept a fruit name and display colour of the fruit using case..esac. and
+display don't know if not matching any case.
+
+
+#!/bin/hash
+echo "enter the friut name"
+read FRUIT
+case "$FRUIT" in
+   "apple") echo "it is green" 
+   ;;
+   "chilly") echo "it is red." 
+   ;;
+   "coco") echo "it is black" 
+   ;;
+esac
+
+
+
+14. Write a shell script to display odd numbers less than 10 using while loop.
+
+#!/bin/bash
+index=0
+while [ $index -lt 10 ]
+do
+  REMAINDER=$(( $index % 2 ))
+  if [ $REMAINDER -ne 0 ]
+  then
+    echo $index
+  fi
+  index=$(($index+1))
+done
+
+
+15. Write a shell script to display even numbers upto 10 using for loop.
+
+#!/bin/bash
+index=0
+while [ $index -lt 10 ]
+do
+  REMAINDER=$(( $index % 2 ))
+  if [ $REMAINDER -eq 0 ]
+  then
+    echo $index
+  fi
+  index=$(($index+1))
+done
+
+
+
+16. Write a shell script to display your name 10 times using until loop.
+
+#!/bin/bash
+#!/bin/sh
+
+a=0
+
+until [ ! $a -lt 10 ]
+do
+   echo "alphonsa"
+   a=`expr $a + 1`
+done
+
+
+17. Write a shell script to display a menu using select loop. Display appropriate messages using
+if..else or case..esac
+
+#!/bin/bash
+
+echo "SELECT YOUR FAVORITE FRUIT";
+echo "1. Apple"
+echo "2. Grapes"
+echo "3. Mango"
+echo "4. Exit from menu "
+echo -n "Enter your menu choice [1-4]: "
+
+while :
+do
+
+read choice
+
+case $choice in
+  1)  echo "You have selected the option 1"
+      echo "Selected Fruit is Apple. ";;
+  2)  echo "You have selected the option 2"
+      echo "Selected Fruit is Grapes. ";;
+  3)  echo "You have selected the option 3"
+      echo "Selected Fruit is Mango. ";;
+  4)  echo "Quiting ..."
+      exit;;
+  *) echo "invalid option";;
+
+esac
+  echo -n "Enter your menu choice [1-4]: "
+done
+
+
+18. Write a shell script program to show the use of break statement.
+
+#!/bin/bash
+a=0
+
+while [ $a -lt 10 ]
+do
+   echo $a
+   if [ $a -eq 5 ]
+   then
+      break
+   fi
+   a=`expr $a + 1`
+done
+
+
+19. Write a shell script program to show the use of continue statement.
+
+#!/bin/bash
+NUMS="1 2 3 4 5 6 7"
+
+for NUM in $NUMS
+do
+   Q=`expr $NUM % 2`
+   if [ $Q -eq 0 ]
+   then
+      echo "Number is an even number!!"
+      continue
+   fi
+   echo "Found odd number"
+done
+
+
+20. Write a shell script program to read a number and print it in reverse order. 
+
+echo "enter the number"
+read n
+sd=0
+rev=0
+
+while [ $n -gt 0 ]
+do
+    sd=`expr $n % 10`
+    rev=`expr $rev \* 10 + $sd`
+    n=`expr $n / 10 `
+done
+
+echo "Reverse number of entered digit is $rev"
+
+
+
+21. Write a shell script program to print count of files and subdirectories in the specified directory.
+
+#!/bin/bash
+START=$HOME
+[ $# -eq 1 ] && START=$1 || :
+
+if [ ! -d $START ]
+then
+        echo "$START not a directory!"
+        exit 1
+fi
+DIRS=$(find "$START" -type d)
+
+for d in $DIRS
+do
+   [ "$d" != "." -a "$d" != ".." ] &&  echo "$d dirctory has $(ls -l $d | wc -l) files" || :
+done
+
+
+22. Write a shell script program to read a number and print odd or even using function.
+
+#!/bin/bash
+echo "enter the number"
+read n
+r=0
+    sd=`expr $n % 2`
+
+   if [ $sd = $r ]
+then
+     echo "THE GIVEN NUMBER IS EVEN"
+else
+     echo "THE GIVEN NUMBER IS ODD"
+fi
+
+
+23. Write a shell script to calculate simple interest.
+
+
+echo "enter the p[rincipal value"
+read a
+echo "enter the rate of interset "
+read b
+echo "enter the time period"
+read c
+p=`expr $a \* $b \* $c / 100`
+echo "simple interset is"
+echo $p
+
+
+24. Write a shell Script to determine largest among three integer number.
+
+#!/bin/bash
+echo "enter the 1 st number"
+read a
+echo "enter the 2 nd number"
+read b
+echo "enter the 3 rd  number"
+read c
+if [ $a -ge $b && $a -ge $c ]
+then
+        echo "1 st number is larger"
+elif [$b -ge $c && $b -ge $a ]
+then
+        echo "2 nd number is larger"
+else
+        echo "3rd number is larger"
+fi
+
+
+
+25. Write a shell script to determine a given year is leap year or not.
+
+#!/bin/bash
+echo "enter the year"
+read year
+r=`expr $year % 400`
+t=`expr $year % 100`
+if [ $r -eq $t ]
+then
+echo "entered year is leap "
+else
+        echo "not a leap year "
+fi
+
+~                
+
+26. Write a shell script to print multiplication table of given number using while statement.
+
+#!/bin/bash
+echo "enter the number"
+read p
+i=1
+while [ $i -le 10 ]
+do
+  echo "$p x $i = $((p*i))"
+  i=$((i+1))
+done
+
+
+
+27. Write a shell script to compare two string.
+
+#!/bin/bash
+echo "enter the 1 st string"
+read a
+echo "enter the 2 nd string"
+read b
+if [ $a == $b ]
+then
+        echo "both strings are same"
+else
+        echo "both string are not same"
+fi
+
+
+
+28. Write a shell script to read and check the directory exists or not, if not make directory.
+
+
+
+
+29. Write a shell script to implement menu driven program to perform all arithmetic operation
+using case statement.
+
+
+#!/bin/bash
+echo "enter the two  number"
+read n
+read m
+
+echo "SELECT YOUR ARITHMETIC OPERATION";
+echo "1. ADDITION"
+echo "2. DIVISION"
+echo "3. MULTIPLICATION"
+echo "4. Exit from menu "
+echo -n "Enter your menu choice [1-4]: "
+
+while :
+do
+
+read choice
+
+case $choice in
+  1)  s=`expr $n + $m`
+      echo "Sum of the two number "$s;;
+  2)  s=`expr $n / $m`
+      echo "division of  two number "$s;;
+
+  3)  s=`expr $n \*  $m`
+      echo "multi of  two number "$s;;
+
+  4)  echo "Quiting ..."
+      exit;;
+  *) echo "invalid option";;
+
+esac
+  echo -n "Enter your menu choice [1-4]: "
+done
+
+
+
+
+30. Write a shell script to implement menu driven program to : (i). display list of directory
+contents (ii). Name of current directory (iii). Who is logged on
+31. Write a shell script to print following pattern.
+*
+* *
+* * *
+* * * *
+32. Write a shell script to accept USERNAME, PASSWORD, PHONE NUMBER, EMAIL ID, DATE OF
+BIRTH from the user and Display all the details only if the validation for each field is successful.
+33. Create a data file ‘Sample.data’ containing 5 integer numbers, one on each line. Write a shell
+script to compute the average of these numbers by reading the file ‘Sample.data’.
+34. Write a shell script to Display Disk usage, currently working processes, Month’s calendar, date and
+time.
+35. Write a shell script to Copy the contents of file1 to file2 and and Search for a word in a file2.
+36. Write a Shell program to find the smallest and largest numbers from a set of numbers.
+37. Write a shell script to check whether a number is Prime or not.
+38. Write a shell script to check whether a string is Palindrome or not.
+39. Write a shell script to check whether the number is EVEN or ODD.
+40. Write a shell script to count the number of vowels in a string.
+41. Write a shell script to find the Factorial of a number.
+42. Write a shell script to display the Fibonacci series with given number of elements.
+43. Write a shell script to find the area of a circle with the given radius.
+44. Write a shell script that computes the gross salary of an employee according to the following
+rules: i)If basic salary is < 1500 then HRA =10% of the basic and DA =90% of the basic.ii)If basic
+salary is >=1500 then HRA =Rs500and DA=98% of the basic. The basic salary is entered
+interactively through the keyboard.
+45. Write a Shell program to find the second highest number from a set of numbers.          
