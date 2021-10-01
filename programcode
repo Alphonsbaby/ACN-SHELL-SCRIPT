@@ -24,10 +24,10 @@ echo "sum is" $s
 3. Write a shell script to use the 8 special variables.
 
 echo "filename::"$0
-echo"varible ::"$n
+echo "varible ::"$n
 echo "argument::"$#
 echo "double quoted argument::"$*
-echo "process id::"$s
+echo "process id::"$$
 echo "process number::"$!
 echo "all argu ments::"$@
 
@@ -36,7 +36,7 @@ echo "all argu ments::"$@
 4. Write a shell script to Display the process id of your current shell.
 
 #!/bin/bash
-echo "demo progrsam"
+echo "demo program"
 echo "PID is"$$
 ~                 
 
@@ -45,7 +45,7 @@ echo "PID is"$$
 #!/bin/bash
 echo "hellow,$LOGNAME"
 echo "current date `date`"
-echo "user `who i am`"
+echo "user `whoami`"
 echo "current directory `pwd`"
 
 
@@ -297,18 +297,13 @@ done
 
 15. Write a shell script to display even numbers upto 10 using for loop.
 
-#!/bin/bash
-index=0
-while [ $index -lt 10 ]
-do
-  REMAINDER=$(( $index % 2 ))
-  if [ $REMAINDER -eq 0 ]
-  then
-    echo $index
-  fi
-  index=$(($index+1))
-done
 
+#!/bin/bash
+for index in {2..10..2}
+do
+echo "even numbers ::$index"
+done
+~      
 
 
 16. Write a shell script to display your name 10 times using until loop.
@@ -433,6 +428,8 @@ done
 #!/bin/bash
 echo "enter the number"
 read n
+function oddeven
+{
 r=0
     sd=`expr $n % 2`
 
@@ -442,6 +439,11 @@ then
 else
      echo "THE GIVEN NUMBER IS ODD"
 fi
+
+}
+r=`oddeven $n`
+echo "$r"
+
 
 
 23. Write a shell script to calculate simple interest.
@@ -461,16 +463,17 @@ echo $p
 24. Write a shell Script to determine largest among three integer number.
 
 #!/bin/bash
+#!/bin/bash
 echo "enter the 1 st number"
 read a
 echo "enter the 2 nd number"
 read b
 echo "enter the 3 rd  number"
 read c
-if [ $a -ge $b && $a -ge $c ]
+if [ $a -ge $b ] && [ $a -ge $c ]
 then
         echo "1 st number is larger"
-elif [$b -ge $c && $b -ge $a ]
+elif [ $b -ge $c ]  && [ $b -ge $a ]
 then
         echo "2 nd number is larger"
 else
@@ -479,21 +482,23 @@ fi
 
 
 
+
+
 25. Write a shell script to determine a given year is leap year or not.
 
 #!/bin/bash
-echo "enter the year"
-read year
-r=`expr $year % 400`
-t=`expr $year % 100`
-if [ $r -eq $t ]
+echo "Enter year (YYYY): "
+read y
+a=`expr $y % 4`
+b=`expr $y % 100`
+c=`expr $y % 400`
+if [ $a -eq 0 -a $b -ne 0 -o $c -eq 0 ]
 then
-echo "entered year is leap "
+        echo "$y is leap year"
 else
-        echo "not a leap year "
-fi
+        echo "$y is not a leap year"
 
-~                
+fi
 
 26. Write a shell script to print multiplication table of given number using while statement.
 
@@ -527,6 +532,26 @@ fi
 
 28. Write a shell script to read and check the directory exists or not, if not make directory.
 
+#!/bin/bash
+echo "Enter directory name"
+
+read dirname
+
+if [ ! -d "$dirname" ]
+
+then
+
+echo "File doesn't exist. Creating now"
+
+mkdir ./$dirname
+
+echo "File created"
+
+else
+
+echo "File exists"
+
+fi
 
 
 
@@ -573,28 +598,310 @@ done
 
 30. Write a shell script to implement menu driven program to : (i). display list of directory
 contents (ii). Name of current directory (iii). Who is logged on
+
+#!/bin/bash
+i="y"
+
+while [ $i = "y" ]
+do
+echo "1.List of directory contents"
+echo "2.Name of current directory"
+echo "3.Who is logged on"
+echo "Enter your choice"
+read ch
+case $ch in
+    1)echo `ls`;;
+    2)echo `pwd`;;
+    3)echo `w`;;
+    *)echo "Invalid choice";;
+esac
+echo "Do u want to continue ?"
+read i
+if [ $i != "y" ]
+then
+    exit
+fi
+done
+~     
+
 31. Write a shell script to print following pattern.
 *
 * *
 * * *
 * * * *
+
+#!/bin/bash
+rows=4
+for((i=1; i<=rows; i++))
+do
+  for((j=1; j<=i; j++))
+  do
+    echo -n "* "
+  done
+  echo
+done
+~                                                                                                                                                                     
+
 32. Write a shell script to accept USERNAME, PASSWORD, PHONE NUMBER, EMAIL ID, DATE OF
 BIRTH from the user and Display all the details only if the validation for each field is successful.
+
+echo "Enter the Phone number:"
+read c
+echo "Enter the E-mail ID:"
+read d
+echo "Enter the Date of Birth:"
+read e
+s='alphons'
+n='baby'
+m=7025868035
+h='alp@gmail.com'
+t=23/07/1998
+if [ $s = $a ]
+then
+        echo "The Username is valid and username is:$a"
+else
+        echo "The Username is invalid:"
+fi
+if [ $n = $b ]
+then
+         echo "The Password is valid and password:$b"
+else
+        echo "The Password ia invalid"
+fi
+if [ $m = $c ]
+then
+        echo "The Phone number is valid and phone number is:$c"
+else
+        echo "The Phone number is invalid"
+fi
+if [ $h = $d ]
+then
+        echo "The Email id is valid and email id is:$d"
+else
+        echo "The Email id is invalid"
+fi
+if [ $t = $e ]
+then
+        echo "The date of Brith is valid:$e"
+else
+        echo "The date of birth is invalid"
+
+fi
+
+
+
 33. Create a data file ‘Sample.data’ containing 5 integer numbers, one on each line. Write a shell
 script to compute the average of these numbers by reading the file ‘Sample.data’.
+
+while read -r num; do
+        sum=`expr $sum + $num`
+done < sample.data
+avg=`expr $sum / 5`
+echo "Average:$avg"
+
 34. Write a shell script to Display Disk usage, currently working processes, Month’s calendar, date and
 time.
+
+echo "Today is $(date)"
+echo ""
+
+echo "Calendar :"
+cal
+
+echo "currently working processes : $(who | wc -l)"
+
+echo "disk usage ::$(df -H)"
+
+
 35. Write a shell script to Copy the contents of file1 to file2 and and Search for a word in a file2.
+
+cp pro35-1 pro35-2
+
 36. Write a Shell program to find the smallest and largest numbers from a set of numbers.
+
+echo "enter size of an array"
+read n
+for((i=0;i<n;i++))
+do
+echo " enter $((i+1)) number"
+read nos[$i]
+done
+echo "number entered are"
+for((i=0;i<n;i++))
+do
+echo ${nos[$i]}
+done
+small=${nos[0]}
+greatest=${nos[0]}
+for((i=0;i<n;i++))
+do
+if [ ${nos[$i]} -lt $small ]; then
+small=${nos[$i]}
+elif [ ${nos[$i]} -gt $greatest ]; then
+greatest=${nos[$i]}
+fi
+done
+echo "smallest number in an array is $small"
+echo "greatest number in an array is $greatest"
+
+
 37. Write a shell script to check whether a number is Prime or not.
+
+#!/bin/bash
+echo "enter number"
+read num
+function prime
+{
+for((i=2; i<=num/2; i++))
+do
+  if [ $((num%i)) -eq 0 ]
+  then
+    echo "$num is not a prime number."
+    exit
+  fi
+done
+echo "$num is a prime number."
+}
+r=`prime $number`
+echo "$r"
+~         
+
 38. Write a shell script to check whether a string is Palindrome or not.
+
+#!/bin/bash
+
+echo Enter the string
+read s
+echo $s > temp
+rvs="$(rev temp)"
+if [ $s = $rvs ]
+then
+echo "it is palindrome"
+else
+echo " it is not a palindrome"
+fi
+
+
+
 39. Write a shell script to check whether the number is EVEN or ODD.
+
+#!/bin/bash
+echo "enter the number"
+read n
+r=0
+    sd=`expr $n % 2`
+
+   if [ $sd = $r ]
+then
+     echo "THE GIVEN NUMBER IS EVEN"
+else
+     echo "THE GIVEN NUMBER IS ODD"
+fi
+~  
+
 40. Write a shell script to count the number of vowels in a string.
+
+#!/bin/sh
+
+echo -n "Enter a line of text: "
+read string
+vowCount=$(echo $string | grep -o -i "[aeiou]" | wc --lines)
+echo "The given string has $vowCount vowels"
+
+
 41. Write a shell script to find the Factorial of a number.
+
+#!/bin/bash
+echo "Enter a number"
+read num
+
+fact=1
+
+while [ $num -gt 1 ]
+do
+  fact=$((fact * num))
+  num=$((num - 1))
+done
+
+echo "factorial is $fact"
+~                                 
+
 42. Write a shell script to display the Fibonacci series with given number of elements.
+
+#!/bin/bash
+echo "enter the  number "
+read N
+
+a=0
+b=1
+
+echo "The Fibonacci series is : "
+
+for (( i=0; i<N; i++ ))
+do
+    echo -n "$a "
+    fn=$((a + b))
+    a=$b
+    b=$fn
+done
+
+
 43. Write a shell script to find the area of a circle with the given radius.
+
+echo "enter the radius of circle"
+read r
+PI=3.14159
+A=$(echo "$PI*($r^2)"|bc)
+echo "area is ::$A"
+
+
 44. Write a shell script that computes the gross salary of an employee according to the following
 rules: i)If basic salary is < 1500 then HRA =10% of the basic and DA =90% of the basic.ii)If basic
 salary is >=1500 then HRA =Rs500and DA=98% of the basic. The basic salary is entered
 interactively through the keyboard.
-45. Write a Shell program to find the second highest number from a set of numbers.          
+
+echo "enter the basic salary:"
+
+read bsal
+
+if [ $bsal -lt 1500 ]
+
+then
+
+gsal=$((bsal+((bsal/100)*10)+(bsal/100)*90))
+
+echo "The gross salary : $gsal"
+
+fi
+
+if [ $bsal -ge 1500 ]
+
+then
+
+gsal=$(((bsal+500)+(bsal/100)*98))
+
+echo "the gross salary : $gsal"
+
+fi
+~      
+
+45. Write a Shell program to find the second highest number from a set of numbers.         
+
+echo “Enter the number of elements:”
+read n
+a=0
+b=0
+for((i = 1 ; i <= n ; i++)) do
+echo “Enter the number:”
+read no
+if [ $no -gt $a ]
+then
+b=$a
+a=$no
+elif [ $no -gt $b ]
+then
+b=$no
+fi
+done
+echo “The second highest number is : $b”
+~                                                  
