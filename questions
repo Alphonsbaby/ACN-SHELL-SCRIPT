@@ -1,0 +1,46 @@
+1. write a shell script program to display name, age, and family name. 
+2. write a shell script program to add two numbers. 
+3. Write a shell script to use the 8 special variables.
+4. Write a shell script to Display the process id of your current shell. 
+5. Write a shell script to display your name, current date, time, username and current directory. 
+6. Write a shell script to store and display the names of your family members using array.
+7. Write a shell script program to store 10 and 20 in variables a and b. Then apply 8 arithmetic operations and display the output. 
+8. Write a shell script program to store 10 and 20 in variables a and b. Then apply 6 relational operations and display the output.
+9. Write a shell script program to store abc and efg in variables a and b. Then apply string operations and display the output. 
+10. Write a shell script to use File Test operators and show the output. 
+11. Write a shell script to accept a password and check whether it is matching with the existing password. Display appropriate messages.
+12. Write a shell script to accept two numbers a and b. Compare these numbers and Display appropriate messages. ( Equal,  greater than, less than) using if..elif 
+13. Write a shell script to accept a fruit name and display colour of the fruit using case..esac. and display don't know if not matching any case. 
+14. Write a shell script to display  odd numbers less than 10 using while loop.
+15. Write a shell script to display  even numbers upto 10 using for loop. 
+16. Write a shell script to display  your name 10 times using until loop. 
+17. Write a shell script to display   a menu using select loop. Display appropriate messages using if..else or case..esac
+18. Write a shell script program to show the use of break statement.
+19. Write a shell script program to show the use of continue statement. 
+20. Write a shell script program to read a number and print it in reverse order.  
+21. Write a shell script program to print count of files and subdirectories in the specified directory. 
+22. Write a shell script program to read a number and print odd or even using function. 
+23. Write a shell script to calculate simple interest. 
+24. Write a shell Script to determine largest among three integer number.
+25. Write a shell script to determine a given year is leap year or not. 
+26. Write a shell script to print multiplication table of given number using while statement. 
+27. Write a shell script to compare two string.
+28. Write a shell script to read and check the directory exists or not, if not make directory. 
+29. Write a shell script to implement menu driven program to perform all arithmetic operation using case statement. 
+30. Write a shell script to implement menu driven program to : (i). display list of directory contents (ii). Name of current directory (iii). Who is logged on 
+31. Write a shell script to print following pattern. * * * * * * * * * * 
+ 
+32. Write a shell script to accept USERNAME, PASSWORD, PHONE NUMBER, EMAIL ID, DATE OF BIRTH from the user and Display all the details only if the validation for each field is successful.
+33. Create a data file ‘Sample.data’ containing 5 integer numbers, one on each line. Write a shell script to compute the average of these numbers by reading the file ‘Sample.data’. 
+34.   Write a shell script to Display Disk usage, currently working processes, Month’s calendar, date and  time. 
+35. Write a shell script to Copy the contents of file1 to file2 and and Search for a word in a file2. 
+36. Write a Shell program to find the smallest and largest numbers from a set of numbers. 
+37. Write a shell script to check whether a number is Prime or not.
+38. Write a shell script to check whether a string is Palindrome or not.
+39. Write a shell script to check whether the number is EVEN or ODD.
+40. Write a shell script to count the number of vowels in a string. 
+41. Write a shell script to find the Factorial of a number.
+42. Write a shell script to display the Fibonacci series with given number of elements.
+43. Write a shell script to find the area of a circle with the given radius.
+44. Write a shell script that computes the gross salary of an employee according to the following rules: i)If basic salary is < 1500 then HRA =10% of the basic and DA =90% of the basic.ii)If basic salary is >=1500 then HRA =Rs500and DA=98% of the basic. The basic salary is entered interactively through the keyboard.
+45. Write a Shell program to find the second highest number from a set of numbers. 
